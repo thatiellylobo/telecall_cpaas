@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Cadastro CPaaS</title>
+  <link href="css/cadastro.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="img/icon-telecall.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="javascript/script.js" defer></script>
+  <script src="javascript/validacao.js" defer></script>
+  
+</head>
+
+<!--- header --->
+<header id="cabeçalho">
+  <a href="index.html"><img id="img" src="img/modavo-icon-branco.png" alt="logo da loja"></a>
+
+  <!--- dark theme --->
+  <div>
+    <input type="checkbox" name="change-theme" id="change-theme">
+    <label for="change-theme">
+      <!-- <i class="bi bi-moon"> </i> -->
+      <i class="bi bi-circle-half"> </i>
+    </label>
+  </div>
+  <!--- dark theme --->
+</header>
+<!--- header --->
+
+<body>
+  <!--- formulário --->
+  <div id="main-container">
+    <img id="status" src="img/statusa1.png" alt="barra de estagio">
+
+    <h1>Preencha os campos abaixo<br>
+      para criar sua conta</h1>
+
+    <form id="registro" action="salvar_cadastro.php" method="post">
+
+      <div class="full-box">
+        <label for="nome">Nome Completo</label>
+        <input id="nome" name="nome" type="text" placeholder="Digite seu nome" data-min-length="15" data-max-length="60" data-only-letters data-required autofocus>
+      </div>
+
+      <div class="full-box">
+        <label for="nascimento">Data de nascimento</label>
+        <input id="nascimento" name="nascimento" type="date" data-required pattern="\d{2}/\d{2}/\d{4}">
+      </div>
+
+      <div class="generocad">
+
+              <div>
+              <label for="genero">Gênero</label>
+            <label id="fem" for="opcao1">Feminino</label>
+              <input id="opcao1" type="radio" name="genero" value="Feminino" data-required>
+              </div>
+
+              <div>
+                <label id="masc" for="opcao2">Masculino</label>
+            <input id="opcao2" type="radio" name="genero" value="Masculino" data-required>
+              </div>
+
+             <div> 
+                <label id="naoinf" for="opcao3">Não informar</label>
+            <input id="opcao3" type="radio" name="genero" value="Prefiro não responder" data-required>
+            </div>
+
+      </div>  
+      
+      <div class="full-box">
+        <label for="nome_materno">Nome Materno</label>
+        <input id="nome_materno" name="nome_materno" type="text" placeholder="Nome Materno" data-only-letters data-required>
+      </div>
+
+      <div class="full-box">
+        <label for="cpf">CPF</label>
+        <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" data-required onfocus="CadastrarCPF()">
+      </div>
+
+      <div class="half-box">
+        <label for="celular">Celular</label>
+        <input id="celular" name="celular" type="text" placeholder="+55 (" data-max-length="19" data-required onfocus="CadastrarCelular()"  onblur="VerificarCelular()">
+      </div>
+
+      <div class="half-box espaco">
+        <label for="telefone">Telefone Fixo</label>
+        <input id="telefone" name="telefone" type="text" placeholder="+55 (" data-max-length="18" onfocus="CadastrarTelefone()" onblur="VerificarTelefone()">
+      </div>
+
+       <div class="full-box">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="email@email.com" data-required data-email>
+      </div>
+
+      <div class="full-box">
+        <label for="userCad">Usuário</label>
+        <input id="userCad" name="userCad" type="text" data-min-length="6" data-max-length="6" data-only-letters
+          data-required>
+      </div>
+
+      <div class="full-box">
+        <label for="senhaCad">Senha</label>
+        <input id="senhaCad" name="senhaCad" type="password" data-only-letters data-mask="password" data-min-length="8" data-max-length="8" data-required>
+        <i id="verSenha" class="bi bi-eye-fill"></i>
+      </div>
+
+      <div class="full-box">
+        <label for="confirmSenha">Confirmar Senha</label>
+        <input id="confirmSenha" name="confirmSenha" type="password" data-only-letters data-mask="password" data-equal="senhaCad" data-max-length="8" data-required>
+        <i id="verConfirmSenha" class="bi bi-eye-fill"></i>
+      </div>
+  
+      <input type="hidden" name="formulario" value="cadastro1">
+
+      <div class="full-box">
+        <input type="submit" value="Avançar" id="botao" />
+        <input type="reset" value="Limpar" id="botaolimpar" />      <!--- testando botão reset --->
+      </div>
+    </form>
+  </div>
+  <p class="erro-validacao template"></p>
+  <!--- formulário --->
+
+  <!--- footer --->
+  <footer>
+    <div id="container">
+      <a href="https://telecall.com/?gclid=EAIaIQobChMI7Zn_6qKUggMV-19IAB1lIAw2EAAYASAAEgJ73fD_BwE" target="_blank"><img
+          src="img/logotelecallbranco.png" alt="Logo Telecall" id="logo"></a>
+      <section class="contato">
+        <h2>Contato</h2>
+        <ul>
+          <li>(21) 3030-1010</li>
+          <li>0800 030 2016</li>
+          <li>suporte@telecall.com</li>
+        </ul>
+      </section>
+      <div class="social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/company/telecall/" target="_blank">
+              <i class="bi bi-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/telecallbr/" target="_blank">
+              <i class="bi bi-instagram"> </i></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/TelecallBr" target="_blank">
+              <i class="bi bi-facebook"> </i></a>
+          </li>
+        </ul>
+      </div>
+  </footer>
+
+  <section> 
+    <div id="scroll-to-top" class="back-to-top" onclick="scrollToTop()">
+    <a href="#" <i class="bi bi-chevron-double-up" class="btn-to-top"></a> </i>
+    </div>
+  </section>
+  <!--- footer --->
+
+</body>
+
+</html>

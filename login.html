@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="img/icon-telecall.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/log/.js" defer></script>
+
+   <style>
+
+/* mensagem de erro */
+
+.borda-erro {
+  border: 1px solid #f5c6cb;
+  padding: 5px;
+  background-color: #f8d7da;
+  color: #721c24;
+  width: 230px;
+  margin-left: 50px;
+  margin-top: -20px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: none;
+}
+
+.error-message {
+  color: #721c24;
+  text-align: center;
+  font-size: 14px;
+  white-space: normal;
+  display: block;
+}
+
+.borda-sucesso {
+  border: 1px solid #c8f5c6;
+  padding: 5px;
+  background-color: #ebf5fa;
+  width: 230px;
+  margin-left: 50px;
+  margin-top: -20px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: none;
+}
+
+.success-message {
+  color: green;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
+}
+/* mensagem de erro */
+
+
+   </style>
+  </head>
+
+  <body>
+    <!--- dark theme --->
+    <header>
+      <div>
+        <input type="checkbox" name="change-theme" id="change-theme" />
+        <label for="change-theme">
+          <i class="bi bi-circle-half"> </i>   <!-- botão contraste -->
+        </label>
+      </div>
+    </header>
+
+    <!--- dark theme --->
+
+    <!--- login --->
+    <div class="pagina">
+      <form class="formLogin" id="loginForm" action="login.php" method="POST">
+        <h2>Bem-Vindo</h2>
+
+        <img id="img-mododark" src="img/modavo-icon-branco.png" alt="logo da loja"/>
+        <img src="img/modavo-icon.png" alt="logo da loja" /> <br />
+        <p>Digite seus dados de acesso no campo abaixo.</p>
+
+        <div id="mensagemErro" class="borda-erro"></div>
+        <div id="mensagemSucesso" class="borda-sucesso"></div>
+
+        <label for="login"></label>
+        <input
+          id="login"
+          name="login"
+          type="text"
+          maxlength="6"
+          placeholder="Nome de usuário"
+          autofocus
+        />
+        <label for="senha"></label>
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          maxlength="8"
+      
+          placeholder="Senha"
+        />
+        <i class="bi bi-eye-fill"></i><br />
+        
+
+        <input type="submit" value="Entrar" id="botao" />
+        <input type="reset" value="Limpar" id="botaolimpar" />      <!--- testando botão reset --->
+        
+
+        <p>
+          &emsp;Ainda não possui uma conta? <br />
+          <a href="cadastro1.html"> Cadastre-se aqui.</a>
+        </p>
+      </form>
+    </div>
+    <!--- login --->
+
+<script>
+    
+    function validarLogin(event) {
+            event.preventDefault(); // Impede a submissão do formulário
+
+            const usuario = document.getElementById('login').value;
+            const senha = document.getElementById('senha').value;
+            const mensagemErro = document.getElementById('mensagemErro');
+            const mensagemSucesso = document.getElementById('mensagemSucesso');
+
+            // Limpar mensagens anteriores
+            mensagemErro.innerText = '';
+            mensagemErro.classList.remove('error-message');
+            mensagemSucesso.innerText = '';
+            mensagemSucesso.classList.remove('success-message');
+
+            // Verificação de campos vazios
+            if (usuario === '' || senha === '') {
+                mensagemErro.innerText = 'Preencha todos os campos.';
+                mensagemErro.classList.add('error-message');
+                return;
+            }
+
+            // Verificação de comprimento da senha e usuário
+            if (usuario.length !== 6) {
+                mensagemErro.innerText = 'O nome de usuário deve ter 6 caracteres.';
+                mensagemErro.classList.add('error-message');
+                return;
+            }
+
+            if (senha.length !== 8) {
+                mensagemErro.innerText = 'A senha deve ter 8 caracteres.';
+                mensagemErro.classList.add('error-message');
+                return;
+            }
+
+            // Enviar o formulário via AJAX
+            $.ajax({
+                url: 'login.php',
+                type: 'POST',
+                data: $('#loginForm').serialize(),
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status === 'error') {
+                        mensagemErro.innerText = data.message;
+                        mensagemErro.classList.add('error-message');
+                    } else if (data.status === 'success') {
+                        // Salvar token e acesso no localStorage
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('acesso', data.acesso);
+
+                        // Exibir mensagem de sucesso e redirecionar
+                        mensagemSucesso.innerText = 'Entrando...';
+                        mensagemSucesso.classList.add('success-message');
+                        setTimeout(() => {
+                            window.location.href = data.redirect;
+                        }, 1000);
+                    }
+                },
+                error: function() {
+                    mensagemErro.innerText = 'Ocorreu um erro. Por favor, tente novamente.';
+                    mensagemErro.classList.add('error-message');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('loginForm').addEventListener('submit', validarLogin);
+
+            const clearError = () => {
+                const mensagemErro = document.getElementById('mensagemErro');
+                mensagemErro.innerText = '';
+                mensagemErro.classList.remove('error-message');
+            };
+
+            document.getElementById('login').addEventListener('input', clearError);
+            document.getElementById('senha').addEventListener('input', clearError);
+        });
+
+        // Mostrar/Ocultar Senha
+        $(document).ready(function() {
+            $('.bi-eye-fill').on('click', function() {
+                let inputSenha = $('#senha');
+                if (inputSenha.attr('type') === 'password') {
+                    inputSenha.attr('type', 'text');
+                } else {
+                    inputSenha.attr('type', 'password');
+                }
+            });
+        });
+  
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,859 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/*--------- dark theme ---------*/
+.dark,
+.dark header,
+.dark .dropdown-menu,
+.dark .funcionamento div,
+.dark .quemusa2 div {
+  background-color: #0a0a0a;
+}
+
+.dark #cabeçalho {
+  box-shadow: 0 0.2rem 1rem #404040;
+  background-color: #0a0a0a;
+}
+
+.dark {
+  color: #ffff;
+}
+
+.dark h1,
+.dark h2,
+.dark p,
+.dark li {
+  color: #fff;
+}
+
+.dark h4 {
+  color: #404040;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.dark .bi-circle-half {
+  color: white;
+}
+
+
+.bi-circle-half {
+  color: #ffffff;
+  font-size: 1.4rem;
+  float: right;
+  right: 210px;
+  top: 39.5px;
+  position: absolute;
+  cursor:pointer;
+}
+
+.bi-circle-half:hover {
+  color: #70c8ff;
+}
+
+
+.dark ::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(235, 245, 250);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #370101;
+
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #80c9f9;
+  border-radius: 20px;
+}
+
+.dark footer {
+  background-color: #000000;
+  width: 100%;
+  height: 150px;
+}
+
+
+.dark .btn {
+  background-color: #0a0a0a;
+}
+
+.dark .quemusa2 .bi {
+  color: #ffffff;
+}
+
+/*--------- dark theme ---------*/
+
+/* -------- header ----------*/
+
+#cabeçalho {
+  background-color: #373737;
+  box-shadow: 0 0.2rem 1rem #cfcfcf;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#img {
+  width: 240px;
+  height: 50px;
+  border-radius: 2px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.menu-opcoes a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-opcoes a:hover {
+  color: #70c8ff;
+}
+
+.menu1 {
+  float: right;
+  margin-top: 42px;
+  padding-right: 340px;
+}
+
+.menu-opcoes ul li {
+  display: inline;
+  margin-left: 40px;
+  margin-right: 20px;
+  font-size: 15px;
+}
+
+.bi-box-arrow-in-right{
+  color: white;
+}
+
+#sair{
+  background-color: #b04a4a;
+  color: white;
+  padding: 8px 18px 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+  margin-top: 35px;
+  margin-right: -38%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  background-color: #373737;
+  border-radius: 3px;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  width: 200px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+.dropdown-menu #first {
+  margin-top: 40px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.area-mobmenu,
+.material-symbols-outlined{
+  display: none;
+}
+/* ------ seta drop menu ------- */
+
+.btn {
+  background-color: #373737;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  color: #70c8ff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .2em;
+  vertical-align: .17em;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+  color: white;
+}
+
+/* ------ seta drop menu ------- */
+
+/* -------- header ----------*/
+
+/* ------ acessibilidade letra ----- */
+
+#btnAumentar {
+  outline: none;
+  border: none;
+  background-color: #373737;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  float: right;
+  right: 300px;
+  top: 40.7px;
+  position: absolute;
+}
+
+#btnAumentar:hover {
+  color: #70c8ff;
+}
+
+#btnDiminuir {
+  outline: none;
+  border: none;
+  background-color: #373737;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.6rem;
+  float: right;
+  right: 255px;
+  top: 36px;
+  position: absolute;
+}
+
+.dark #btnDiminuir {
+  background-color: #0a0a0a;
+}
+
+.dark #btnAumentar {
+  background-color: #0a0a0a;
+}
+
+#btnDiminuir:hover {
+  color: #70c8ff;
+}
+
+.bi-type {
+  color: #ffffff;
+  font-size: 1.7rem;
+  float: right;
+  right: 270px;
+  top: 35px;
+  position: absolute;
+}
+
+.bi-type:hover {
+  color: white;
+}
+
+/* ------ acessibilidade letra ----- */
+
+/* -------- body --------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #323232;
+  border: none;
+}
+
+body {
+  background-color: rgb(235, 245, 250);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b04a4a;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(40px); /* Safari */
+  backdrop-filter: blur(40px);
+  z-index: 9998;
+}
+
+
+/* -------- body --------*/
+
+/* -------- info --------*/
+.info {
+  margin-left: 5%;
+  margin-top: 180px;
+  padding-left: 20px;
+}
+
+.info h1 {
+  font-size: 40px;
+  margin-top: 80px;
+  margin-left: -0.5%;
+}
+
+.info h3 {
+  text-align: justify;
+  color: #b04a4a;
+  font-size: 27px;
+  line-height: 2px;
+  margin-top: 23px;
+  margin-left: -0.5%;
+}
+
+.info h4 {
+  line-height: 5px;
+  font-size: 21px;
+  color: gray;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: 30px;
+  margin-left: -0.4%;
+}
+
+.texto {
+  font-size: 20px;
+  line-height: 33px;
+  width: 600px;
+  margin-top: 45px;
+  margin-left: 6%;
+}
+
+#twofa {
+  float: right;
+  margin-right: 130px;
+  margin-top: 50px;
+  width: 25%;
+  height: 30%;
+}
+
+/* -------- info --------*/
+
+/* -------- como funciona --------*/
+.funciona h2 {
+  margin-left: 6%;
+  margin-top: 6%;
+  font-weight: bold;
+  text-decoration: underline #b04a4a;
+}
+
+.funcionamento {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 3.75rem;
+  width: 80%;
+  padding-top: 50px;
+  margin-left: 130px;
+}
+
+.funcionamento p {
+  font-weight: 300;
+  font-size: 17px;
+  text-align: center;
+}
+
+.funcionamento div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 250px;
+  height: 310px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: -20px;
+}
+
+/* -------- como funciona --------*/
+
+/* -------- benefícios --------*/
+.beneficios h2 {
+  margin-left: 6%;
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+  font-weight: bold;
+  text-decoration: underline #b04a4a;
+}
+
+.beneficios ul {
+  line-height: 35px;
+  font-size: 17px;
+}
+
+.beneficios ul li {
+  margin-left: 6%;
+  width: 40%;
+  list-style: none;
+}
+
+.bi-check-circle-fill {
+  color: red;
+}
+
+/* -------- benefícios --------*/
+
+/* -------- quem usa --------*/
+.quemusa1 h2 {
+  margin-left: 6%;
+  font-weight: bold;
+  text-decoration: underline #b04a4a;
+  margin-top: 5%;
+}
+
+.quemusa2 {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 2rem;
+  width: 80%;
+  margin-top: 9%;
+  margin-bottom: 9%;
+
+}
+
+.quemusa2 .bi {
+  font-size: 70px;
+  color: black;
+}
+
+.quemusa2 p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+.quemusa2 div {
+  background-color: rgb(235, 245, 250);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 150px;
+  height: 310px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: -60px;
+  margin-bottom: 7%;
+  margin-left: 40px;
+}
+
+/* -------- quem usa --------*/
+
+/*--------- footer ---------*/
+footer {
+  background-color: #373737;
+  box-shadow: 0 0.2rem 1rem #cfc9c9;
+  width: 100%;
+  height: 150px;
+  margin-top: 90px;
+}
+
+footer.container {
+  position: relative;
+}
+
+#logo {
+  width: 160px;
+  height: 40px;
+  border-radius: 2px;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.contato h2 {
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: -60px;
+  margin-left: 44.5%;
+  margin-right: 45%;
+}
+
+.contato li {
+  color: #ffffff;
+  font-size: 11px;
+  list-style: none;
+  margin-top: 6px;
+  margin-left: 44%;
+  margin-right: 50%;
+  text-align: center;
+}
+
+#email {
+  margin-left: 587px;
+
+}
+
+.social a {
+  height: 32px;
+  width: 32px;
+  display: block;
+  text-indent: -9999px;
+}
+
+.social a {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.social li {
+  list-style: none;
+  position: relative;
+  float: right;
+  text-align: right;
+  margin-left: 30px;
+  top: -90px;
+}
+
+footer .bi {
+  color: white;
+  font-size: 26px;
+  margin-top: 150%;
+}
+
+footer .bi:hover {
+  color: #6f6d6d;
+}
+
+/*--------- footer ---------*/
+
+/* ------- botão back to top -------- */
+
+#scroll-to-top {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-to-top.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
+
+.back-to-top .bi {
+  transition: transform 0.3s ease-in-out;
+}
+
+.back-to-top:hover .bi {
+  transform: translateY(-5px);
+}
+
+.bi-chevron-double-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  border-radius: 30px;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #005c99;
+  text-decoration: none;
+  color: white;
+}
+
+.bi-chevron-double-up::after {
+  font-size: 23px;
+  margin-top: -4px;
+  font-weight: bolder;
+}
+
+.bi-chevron-double-up:hover {
+  margin-top: -8px;
+  color: #70c8ff;
+}
+
+/* ------- botão back to top -------- */
+
+/*--------- barra de rolagem ---------*/
+
+body::-webkit-scrollbar,
+body::-webkit-scrollbar:horizontal {
+  width: 12px;
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(235, 245, 250);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0084db;
+  border-radius: 20px;
+  border: 3px solid #c2eff5;
+}
+
+/*--------- barra de rolagem ---------*/
+
+/*--------- responsivo ---------*/
+@media only screen and (max-width: 1000px) {
+  .material-symbols-outlined {
+    color: white;
+    float: right;
+    cursor: pointer;
+    margin-right: 4px;
+    font-size: 45px;
+    display: block;
+    margin-top: 2.8%;
+  }
+
+  #itens {
+    display: none;
+    transition: 0.3s ease;
+  }
+
+  .mobile-menu {
+    list-style: none;
+    padding-top: 2px;
+    line-height: 30px;
+    display: none;
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #sair {
+    display: none;
+  }
+
+  #mobsair {
+    background-color: #b04a4a;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-left: 1%;
+    margin-top: 2%;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: medium;
+    text-align: center;
+  }
+
+  .mobile-menu li {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .mobile-menu a:hover {
+    color: #70c8ff;
+  }
+
+  .dark .area-mobmenu {
+    background-color: #030303;
+  }
+
+  .area-mobmenu {
+    background-color: #373737;
+    width: 100%;
+    float: right;
+    margin-right: -100px;
+    margin-top: 9px;
+    display: block;
+  }
+
+  .menu1 {
+    display: none;
+  }
+
+  .material-symbols-outlined:hover {
+    color: #70c8ff;
+  }
+
+  /*--------- menu mobile ---------*/
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .bi-circle-half {
+    margin-right: -20%;
+    margin-top: -3.5%;
+    cursor: pointer;
+  }
+
+  .bi-type {
+    margin-right: -24%;
+    margin-top: -4%;
+  }
+
+  #btnAumentar {
+    margin-right: -24%;
+    font-size: 23px;
+    margin-top: -4.5%;
+  }
+
+  #btnDiminuir {
+    margin-right: -24%;
+    font-size: 35px;
+    margin-top: -6%;
+  }
+
+  #cabeçalho,
+  .dark #cabeçalho {
+    width: 100%;
+    height: 67px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #cabeçalho img,
+  .dark #cabeçalho img {
+    width: 170px;
+    height: 35px;
+    margin-top: 18px;
+    margin-left: 15px;
+  }
+
+  #mdvimg,
+  .dark #mdvimg2 {
+    width: 380px;
+    height: 250px;
+    float: left;
+    margin-left: 25px;
+    margin-top: -11%;
+    margin-bottom: 16%;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #twofa {
+    display: none;
+  }
+
+  .info h1 {
+    font-size: 35px;
+    margin-left: 35%;
+    margin-top: -20px;
+  }
+
+  .info h3,
+  .info h4 {
+    font-size: 22px;
+    margin-left: 6%;
+    margin-top: 6%;
+  }
+
+  .texto {
+    font-size: 18px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 15%;
+  }
+
+  .funcionamento {
+    display: grid;
+    margin-left: 20%;
+  }
+
+  .quemusa2 {
+    display: grid;
+    margin-left: 20%;
+    margin-top: 40%;
+  }
+
+  .quemusa2 #turismo {
+    margin-top: -20%;
+    margin-bottom: 5%;
+  }
+
+  .quemusa2 #saude,
+  .quemusa2 #logistica,
+  .quemusa2 #governo {
+    margin-top: 30%;
+  }
+
+  .beneficios ul li {
+    width: 80%;
+    margin-top: 2%;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  footer,
+  .dark footer {
+    width: 100%;
+    height: 274px;
+  }
+
+  .social {
+    list-style: none;
+    position: relative;
+    float: right;
+    text-align: right;
+    top: -173px;
+  }
+
+  #logo {
+    border-radius: 2px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .contato li,
+  #email {
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: -0.5px;
+    margin-right: 16px;
+  }
+
+  .contato h2 {
+    font-size: 16px;
+    margin-top: 90px;
+    margin-left: 190px;
+  }
+}
