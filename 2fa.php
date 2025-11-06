@@ -12,9 +12,9 @@ $perguntas = ["Qual o nome da sua mãe?", "Qual o seu cep?", "Qual a sua data de
 $respostas = [];
 
 // Definir as respostas corretas com base nos dados do usuário no banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "thati2536";
+$servername = "telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com";
+$username = "admin";
+$password = "thati2215";
 $dbname = "telecall_cpaas";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
