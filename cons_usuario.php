@@ -1,5 +1,6 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "thati2536", "telecall_cpaas");
+$mysqli = new mysqli("telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com", "admin", "thati2215", "telecall_cpaas");
+
 
 if ($mysqli->connect_errno) {
   echo "Falha ao conectar ao MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;

@@ -2,9 +2,9 @@
 session_start();
 
 // Configurações do banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "thati2536";
+$servername = "telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com";
+$username = "admin";
+$password = "thati2215";
 $dbname = "telecall_cpaas";
 
 // Conectando ao banco de dados
