@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("rds-telecall.ceuorwf57uex.us-east-1.rds.amazonaws.com", "admin", "thati2215", "telecall_cpaas");
+$mysqli = new mysqli("rds-telecall.ceuorwf57uex.us-east-1.rds.amazonaws.com", "admin", "thati2536", "telecall_cpaas");
 
 
 if ($mysqli->connect_errno) {
