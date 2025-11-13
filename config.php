@@ -1,7 +1,7 @@
 <?php
-$servername = "telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com";
+$servername = "rds-telecall.ceuorwf57uex.us-east-1.rds.amazonaws.com";
 $username = "admin";
-$password = "thati2215";
+$password = "thati2536";
 $dbname = "telecall_cpaas";
 
 // Crie a conexão

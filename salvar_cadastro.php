@@ -3,9 +3,9 @@
 session_start();
 
 // Conexão com o banco de dados
-$servername = "telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com";
+$servername = "rds-telecall.ceuorwf57uex.us-east-1.rds.amazonaws.com";
 $username = "admin";
-$password = "thati2215";
+$password = "thati2536";
 $dbname = "telecall_cpaas";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

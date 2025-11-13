@@ -2,10 +2,10 @@
 // Verificar se o ID do cliente foi enviado
 if (isset($_GET['id'])) {
     // Conectar ao banco de dados
-  $servername = "telecall-bd.ceuorwf57uex.us-east-1.rds.amazonaws.com";
-  $username = "admin";
-  $password = "thati2215";
-  $dbname = "telecall_cpaas";
+$servername = "rds-telecall.ceuorwf57uex.us-east-1.rds.amazonaws.com";
+$username = "admin";
+$password = "thati2536";
+$dbname = "telecall_cpaas";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
